@@ -10,7 +10,7 @@ class RequestsController < ApplicationController
   end
 
   def index
-    @requests = Request.all
+    @requests = current_user.sent_requests.page(params[:page])
 
     render("requests/index.html.erb")
   end
