@@ -19,6 +19,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :followed_bookmarked_locations,
+             :through => :follows,
+             :source => :bookmarked_locations
+
   has_many   :bookmarked_locations,
              :through => :bookmarks,
              :source => :location

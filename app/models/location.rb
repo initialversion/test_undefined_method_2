@@ -9,6 +9,10 @@ class Location < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :followers,
+             :through => :fans,
+             :source => :followers
+
   has_many   :fans,
              :through => :bookmarks,
              :source => :user
