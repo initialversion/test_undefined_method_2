@@ -24,7 +24,7 @@
           Location
         </label>
 
-        <input type="text" id="location_id" name="location_id" placeholder="Location" class="form-control" value="<%= @bookmark.location_id %>">
+        <%= select_tag(:location_id, options_from_collection_for_select(Location.all, :id, :name, @bookmark.location_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for user_id -->
