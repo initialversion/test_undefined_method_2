@@ -17,7 +17,7 @@
       <% @requests.each do |request| %>
       <tr>
         <td><%= request.sender.email %></td>
-        <td><%= request.recipient_id %></td>
+        <td><%= request.recipient.email %></td>
         <td>
           <a href="/requests/<%= request.id %>" class="btn btn-primary">Show</a>
           <a href="/requests/<%= request.id %>/edit" class="btn btn-warning">Edit</a>
