@@ -53,12 +53,14 @@
           <a href="/bookmarks/<%= bookmark.id %>" class="btn btn-primary">
             Show
           </a>
-          <a href="/bookmarks/<%= bookmark.id %>/edit" class="btn btn-warning">
-            Edit
-          </a>
-          <a href="/delete_bookmark/<%= bookmark.id %>" class="btn btn-danger" rel="nofollow">
-            Delete
-          </a>
+          <%if current_user == bookmark.user %>
+            <a href="/bookmarks/<%= bookmark.id %>/edit" class="btn btn-warning">
+              Edit
+            </a>
+            <a href="/delete_bookmark/<%= bookmark.id %>" class="btn btn-danger" rel="nofollow">
+              Delete
+            </a>
+          <% end %>
         </li>
       <% end %>
     </ul>
@@ -82,12 +84,14 @@
           <a href="/notes/<%= note.id %>" class="btn btn-primary">
             Show
           </a>
-          <a href="/notes/<%= note.id %>/edit" class="btn btn-warning">
-            Edit
-          </a>
-          <a href="/delete_note/<%= note.id %>" class="btn btn-danger" rel="nofollow">
-            Delete
-          </a>
+          <%if current_user == note.user %>
+            <a href="/notes/<%= note.id %>/edit" class="btn btn-warning">
+              Edit
+            </a>
+            <a href="/delete_note/<%= note.id %>" class="btn btn-danger" rel="nofollow">
+              Delete
+            </a>
+          <% end %>
         </li>
       <% end %>
     </ul>
@@ -111,12 +115,14 @@
           <a href="/requests/<%= request.id %>" class="btn btn-primary">
             Show
           </a>
-          <a href="/requests/<%= request.id %>/edit" class="btn btn-warning">
-            Edit
-          </a>
-          <a href="/delete_request/<%= request.id %>" class="btn btn-danger" rel="nofollow">
-            Delete
-          </a>
+          <%if current_user == request.recipient %>
+            <a href="/requests/<%= request.id %>/edit" class="btn btn-warning">
+              Edit
+            </a>
+            <a href="/delete_request/<%= request.id %>" class="btn btn-danger" rel="nofollow">
+              Delete
+            </a>
+          <% end %>
         </li>
       <% end %>
     </ul>
@@ -140,12 +146,14 @@
           <a href="/requests/<%= request.id %>" class="btn btn-primary">
             Show
           </a>
-          <a href="/requests/<%= request.id %>/edit" class="btn btn-warning">
-            Edit
-          </a>
-          <a href="/delete_request/<%= request.id %>" class="btn btn-danger" rel="nofollow">
-            Delete
-          </a>
+          <%if current_user == request.recipient %>
+            <a href="/requests/<%= request.id %>/edit" class="btn btn-warning">
+              Edit
+            </a>
+            <a href="/delete_request/<%= request.id %>" class="btn btn-danger" rel="nofollow">
+              Delete
+            </a>
+          <% end %>
         </li>
       <% end %>
     </ul>
