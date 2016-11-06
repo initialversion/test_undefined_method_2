@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "locations#index"
   # Routes for the Request resource:
   # CREATE
   get "/requests/new", :controller => "requests", :action => "new"
