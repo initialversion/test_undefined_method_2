@@ -1,6 +1,11 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :sent_requests,
+             :class_name => "Request",
+             :foreign_key => "sender_id",
+             :dependent => :destroy
+
   has_many   :notes,
              :dependent => :destroy
 
