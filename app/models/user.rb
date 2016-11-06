@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :notes,
+             :dependent => :destroy
+
   has_many   :bookmarks,
              :dependent => :destroy
 
