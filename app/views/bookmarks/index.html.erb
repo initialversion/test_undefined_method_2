@@ -18,7 +18,7 @@
       <% @bookmarks.each do |bookmark| %>
       <tr>
         <td><%= bookmark.location.name %></td>
-        <td><%= bookmark.user_id %></td>
+        <td><%= bookmark.user.email %></td>
         <td><%= bookmark.dogear %></td>
         <td>
           <a href="/bookmarks/<%= bookmark.id %>" class="btn btn-primary">Show</a>
