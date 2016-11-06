@@ -35,3 +35,235 @@
     </div>
   </div>
 </div>
+
+<!-- A User has many bookmarks -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Bookmarks
+      </li>
+
+      <% @user.bookmarks.each do |bookmark| %>
+        <li class="list-group-item">
+          <a href="/bookmarks/<%= bookmark.id %>">
+            <%= bookmark.location_id %>
+          </a>
+          <a href="/bookmarks/<%= bookmark.id %>" class="btn btn-primary">
+            Show
+          </a>
+          <a href="/bookmarks/<%= bookmark.id %>/edit" class="btn btn-warning">
+            Edit
+          </a>
+          <a href="/delete_bookmark/<%= bookmark.id %>" class="btn btn-danger" rel="nofollow">
+            Delete
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many notes -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Notes
+      </li>
+
+      <% @user.notes.each do |note| %>
+        <li class="list-group-item">
+          <a href="/notes/<%= note.id %>">
+            <%= note.description %>
+          </a>
+          <a href="/notes/<%= note.id %>" class="btn btn-primary">
+            Show
+          </a>
+          <a href="/notes/<%= note.id %>/edit" class="btn btn-warning">
+            Edit
+          </a>
+          <a href="/delete_note/<%= note.id %>" class="btn btn-danger" rel="nofollow">
+            Delete
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many sent_requests -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Sent_requests
+      </li>
+
+      <% @user.sent_requests.each do |request| %>
+        <li class="list-group-item">
+          <a href="/requests/<%= request.id %>">
+            <%= request.sender_id %>
+          </a>
+          <a href="/requests/<%= request.id %>" class="btn btn-primary">
+            Show
+          </a>
+          <a href="/requests/<%= request.id %>/edit" class="btn btn-warning">
+            Edit
+          </a>
+          <a href="/delete_request/<%= request.id %>" class="btn btn-danger" rel="nofollow">
+            Delete
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many received_requests -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Received_requests
+      </li>
+
+      <% @user.received_requests.each do |request| %>
+        <li class="list-group-item">
+          <a href="/requests/<%= request.id %>">
+            <%= request.sender_id %>
+          </a>
+          <a href="/requests/<%= request.id %>" class="btn btn-primary">
+            Show
+          </a>
+          <a href="/requests/<%= request.id %>/edit" class="btn btn-warning">
+            Edit
+          </a>
+          <a href="/delete_request/<%= request.id %>" class="btn btn-danger" rel="nofollow">
+            Delete
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many follows -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Follows
+      </li>
+
+      <% @user.follows.each do |user| %>
+        <li class="list-group-item">
+          <a href="/users/<%= user.id %>">
+            <%= user.email %>
+          </a>
+          <a href="/users/<%= user.id %>" class="btn btn-primary">
+            Show
+          </a>
+          <a href="/users/<%= user.id %>/edit" class="btn btn-warning">
+            Edit
+          </a>
+          <a href="/delete_user/<%= user.id %>" class="btn btn-danger" rel="nofollow">
+            Delete
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many followers -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Followers
+      </li>
+
+      <% @user.followers.each do |user| %>
+        <li class="list-group-item">
+          <a href="/users/<%= user.id %>">
+            <%= user.email %>
+          </a>
+          <a href="/users/<%= user.id %>" class="btn btn-primary">
+            Show
+          </a>
+          <a href="/users/<%= user.id %>/edit" class="btn btn-warning">
+            Edit
+          </a>
+          <a href="/delete_user/<%= user.id %>" class="btn btn-danger" rel="nofollow">
+            Delete
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many bookmarked_locations -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Bookmarked_locations
+      </li>
+
+      <% @user.bookmarked_locations.each do |location| %>
+        <li class="list-group-item">
+          <a href="/locations/<%= location.id %>">
+            <%= location.name %>
+          </a>
+          <a href="/locations/<%= location.id %>" class="btn btn-primary">
+            Show
+          </a>
+          <a href="/locations/<%= location.id %>/edit" class="btn btn-warning">
+            Edit
+          </a>
+          <a href="/delete_location/<%= location.id %>" class="btn btn-danger" rel="nofollow">
+            Delete
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many followed_bookmarked_locations -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Followed_bookmarked_locations
+      </li>
+
+      <% @user.followed_bookmarked_locations.each do |location| %>
+        <li class="list-group-item">
+          <a href="/locations/<%= location.id %>">
+            <%= location.name %>
+          </a>
+          <a href="/locations/<%= location.id %>" class="btn btn-primary">
+            Show
+          </a>
+          <a href="/locations/<%= location.id %>/edit" class="btn btn-warning">
+            Edit
+          </a>
+          <a href="/delete_location/<%= location.id %>" class="btn btn-danger" rel="nofollow">
+            Delete
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
