@@ -6,6 +6,8 @@ class LocationsController < ApplicationController
   end
 
   def show
+    @note = Note.new
+    @bookmark = Bookmark.new
     @location = Location.find(params[:id])
 
     render("locations/show.html.erb")

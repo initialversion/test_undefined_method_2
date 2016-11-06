@@ -52,6 +52,31 @@
           </a>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_bookmark" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for location_id -->
+      <input type="hidden" name="location_id" value="<%= @location.id %>">
+
+      <!-- Label and input for user_id -->
+      <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+      <!-- Label and input for dogear -->
+      <div class="checkbox">
+        <label for="dogear">
+          <input type="checkbox" id="dogear" name="dogear" value="1" <%= "checked" if @bookmark.dogear %>>
+          Dogear
+        </label>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Bookmark
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -81,6 +106,32 @@
           </a>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_note" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <textarea id="description" name="description" placeholder="Description" class="form-control" rows="3"></textarea>
+      </div>
+
+      <!-- Label and input for user_id -->
+      <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+      <!-- Label and input for location_id -->
+      <input type="hidden" name="location_id" value="<%= @location.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Note
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
