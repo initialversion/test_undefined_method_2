@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
   def index
-    @locations = Location.all
+    @locations = Location.page(params[:page])
     @location_hash = Gmaps4rails.build_markers(@locations.where.not(:address_latitude => nil)) do |location, marker|
       marker.lat location.address_latitude
       marker.lng location.address_longitude
