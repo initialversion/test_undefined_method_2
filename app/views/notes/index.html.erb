@@ -19,7 +19,7 @@
       <tr>
         <td><%= note.description %></td>
         <td><%= note.user.email %></td>
-        <td><%= note.location_id %></td>
+        <td><%= note.location.name %></td>
         <td>
           <a href="/notes/<%= note.id %>" class="btn btn-primary">Show</a>
           <a href="/notes/<%= note.id %>/edit" class="btn btn-warning">Edit</a>
